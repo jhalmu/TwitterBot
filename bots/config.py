@@ -18,7 +18,7 @@ def create_api():
     auth.set_access_token(TOKEN, TOKEN_SECRET)
 
     api = tweepy.API(auth)
-
+    #streamapi = tweepy.Stream(seacret.KEY, seacret.SECRET, seacret.TOKEN, seacret.TOKEN_SECRET)
     try:
         api.verify_credentials()
     except Exception as e:
