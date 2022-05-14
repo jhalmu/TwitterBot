@@ -3,22 +3,22 @@
 
 import tweepy
 import logging
-import seacret
+import os
 
 logger = logging.getLogger()
 
 def create_api():
-    KEY = seacret.KEY
-    SECRET= seacret.SECRET
-    TOKEN = seacret.TOKEN
-    TOKEN_SECRET = seacret.TOKEN_SECRET
+    consumer_key = os.getenv("CONSUMER_KEY")
+    consumer_secret= os.getenv("CONSUMER_SECRET")
+    access_token = os.getenv("ACCESS_TOKEN")
+    access_token_seacret = os.getenv("ACCESS_TOKEN_SECRET")
 
     # Authenticate to Twitter
-    auth = tweepy.OAuthHandler(KEY, SECRET)
-    auth.set_access_token(TOKEN, TOKEN_SECRET)
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_seacret)
 
     api = tweepy.API(auth)
-    #streamapi = tweepy.Stream(seacret.KEY, seacret.SECRET, seacret.TOKEN, seacret.TOKEN_SECRET)
+    
     try:
         api.verify_credentials()
     except Exception as e:
@@ -26,3 +26,5 @@ def create_api():
         raise e
     logger.info("API created")
     return api
+
+print('here here')
