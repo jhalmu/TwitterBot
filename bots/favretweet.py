@@ -1,11 +1,12 @@
-#Code:  https://dev.to/james_kinga/simple-twitter-bot-to-retweet-favorite-using-python-tweepy-50bg
+#Orginal code:  https://dev.to/james_kinga/simple-twitter-bot-to-retweet-favorite-using-python-tweepy-50bg
 
 import tweepy
-
+import datetime
+from datetime import datetime, timedelta
 from config import create_api
 from time import sleep
+
 #MyGasAndEnergy1
-#stream = tweepy.Stream(seacret.KEY, seacret.SECRET, seacret.TOKEN, seacret.TOKEN_SECRET)
 api = create_api()
 
 # assign to favorite and follow
@@ -19,29 +20,42 @@ def main():
     for tweet in tweepy.Cursor(
         api.search_tweets, q=hashtags).items():
         try:
-            if not tweet.user.screen_name=='MyGasAndEnergy1':
-                print("\nTweet by: @" + tweet.user.screen_name)
+            # get time 3 days ago and modify it 
+            # so we can compare it to modified tweet_time 
+            t=tweet.created_at
+            tweet_time=t.strftime("%Y-%m-%d")
+            p = datetime.today()- timedelta(days=3)
+            past = p.strftime("%Y-%m-%d")
 
-                # check if we have retweeted and retweet if not
-                if not tweet.retweeted:
-                    try:
-                        tweet.retweet()
-                        print("Tweet retweeted!")
-                    except Exception as e:
-                        print(e)
+            #check if tweet is too old
+            if (tweet_time > past): # <- not yet sure if this is right
 
-                # check if we have favorited and favorite if not
-                if not tweet.favorited:
-                    try:
-                        tweet.favorite()
-                        print("Tweet favorited!")
-                    except Exception as e:
-                        print(e)
+                # pass if tweeter is me (simple version) 
+                if not tweet.user.screen_name=='MyGasAndEnergy1':
+                    print("\nTweet by: @" + tweet.user.screen_name)
 
-                # bot sleep time (seconds)
-                sleep(480)
+                     # check if we have retweeted and retweet if not
+                    if not tweet.retweeted:
+                        try:
+                            tweet.retweet()
+                            print("Tweet retweeted!")
+                        except Exception as e:
+                            #pass
+                            print(e)
 
-        except tweepy.TweepyError as e:
+                    # check if we have favorited and favorite if not
+                    if not tweet.favorited:
+                        try:
+                            tweet.favorite()
+                            print("Tweet favorited!")
+                        except Exception as e:
+                            #pass
+                            print(e)
+
+                    # bot sleep time (seconds)
+                    sleep(480)
+
+        except tweepy.TweepyException as e:
             print(e.reason)
 
 
