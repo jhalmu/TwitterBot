@@ -12,7 +12,7 @@ api = create_api()
 Favorite = True
 Follow = True
 
-hashtags = ['#henryhub']
+hashtags = ['#henryhub','#natgas', '#naturalgas']
 
 # the function with the logic on the bot actions
 def main():
