@@ -33,14 +33,14 @@ def main():
                 # pass if tweeter is me (simple version) 
                 if not tweet.user.screen_name=='MyGasAndEnergy1':
                     print("\nTweet by: @" + tweet.user.screen_name)
-
+                    print(tweet_time)
+                    print(past)    
                      # check if we have retweeted and retweet if not
                     if not tweet.retweeted:
                         try:
                             tweet.retweet()
                             print("Tweet retweeted!")
                         except Exception as e:
-                            #pass
                             print(e)
 
                     # check if we have favorited and favorite if not
@@ -49,17 +49,19 @@ def main():
                             tweet.favorite()
                             print("Tweet favorited!")
                         except Exception as e:
-                            #pass
                             print(e)
 
                     # bot sleep time (seconds)
-                    sleep(480)
-
+                    
+                    sleep(240)
+            print("waiting for sun...")
+        
         except tweepy.TweepyException as e:
             print(e.reason)
 
 
         except StopIteration:
+            
             break
 
 
