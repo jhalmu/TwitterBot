@@ -1,5 +1,5 @@
-# Twitter bot for practising
- 
+# Making-of-Journal 
+## Twitter bot for practising 
 ### and if succeed for botting henry hub gas price and so on
 
 ### 27.4.2022 
@@ -12,11 +12,16 @@
 
 ### 12.5.2022
 - Found new code to study and to get things forward for favandretweet - just could not refactor RP's code. Now working: followfolloers and favretweet (#henryhub). Code is not in Docker yet, but no hurry here. Have to learn some basics first ;)
-- So this is kind of forked code and 
+- So this is kind of forked code and so on
+
+### 14.5.2022
+- added to Dockerfikle and dockerised. Favretweet and follow should be working
+- Now retewwting #henryhub -posts
+- No actual new information still, but because it's important feature to learn, we will rock you. 
 
 ### TODOS
-[] Use env for secrets
-[] Put to run inside docker (maeby after impelementing more parts)
+[x] Use env for secrets
+[x] Put to run inside docker (maeby after impelementing more parts)
 [] More second level actions
-[] Actual action: henry hub -information
+[x partial] Actual action: henry hub -information
 [] More energy things 
