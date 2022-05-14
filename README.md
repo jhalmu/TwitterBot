@@ -20,6 +20,7 @@
 - No actual new information still, but because it's important feature to learn, we will rock you. 
 
 ### TODOS
+[] Check time so not retweeting old news
 [x] Use env for secrets
 [x] Put to run inside docker (maeby after impelementing more parts)
 [] More second level actions
