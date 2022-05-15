@@ -13,7 +13,7 @@ api = create_api()
 Favorite = True
 Follow = True
 
-hashtags = ['#henryhub']
+hashtags = ["#henryhub"]
 
 # the function with the logic on the bot actions
 def main():
@@ -28,14 +28,14 @@ def main():
 
             # check if tweet is too old
             # well, found out when reading docs that there is inbuild method for this.
-            while tweet_time >= past:  # <- not yet sure if this is right
+            #while tweet_time >= past:  # <- not yet sure if this is right
                 #print('only oldies not goldies')
-                continue
+                #continue
                 # pass if tweeter is me (simple version)
-                if not tweet.user.screen_name == "MyGasAndEnergy1":
-                    print("\nTweet by: @" + tweet.user.screen_name)
-                    print(tweet_time)
-                    print(past)
+            if not tweet.user.screen_name == "MyGasAndEnergy1":
+                print("\nTweet by: @" + tweet.user.screen_name)
+                print(tweet_time + " - " + past)
+                #print(past)
                 # check if we have retweeted and retweet if not
                 if not tweet.retweeted:
                     try:

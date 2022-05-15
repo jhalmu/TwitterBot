@@ -8,6 +8,8 @@ import pause
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
+print('visiting here')
+
 def follow_followers(api):
     logger.info("Retrieving and following followers")
     for follower in tweepy.Cursor(api.get_followers).items():

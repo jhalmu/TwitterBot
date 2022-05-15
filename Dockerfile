@@ -13,4 +13,4 @@ COPY requirements.txt /tmp
 RUN pip install -r /tmp/requirements.txt
 
 WORKDIR /bots
-CMD ["python", "favretweet.py","followfollowers.py"]
+CMD python favretweet.py ; python followfollowers.py
