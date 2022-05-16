@@ -13,18 +13,20 @@ api = create_api()
 Favorite = True
 Follow = True
 
-hashtags = ["#henryhub"]
+search_term = "#henryhub OR #natgas OR #lng -filter:retweets"
 
 # the function with the logic on the bot actions
 def main():
-    for tweet in tweepy.Cursor(api.search_tweets, q=hashtags).items():
+    for tweet in tweepy.Cursor(
+        api.search_tweets, 
+        q=search_term
+        ).items():
         try:
             # get time 3 days ago and modify it
-            # so we can compare it to modified tweet_time
             t = tweet.created_at
-            tweet_time = t.strftime("%Y-%m-%d")
-            p = datetime.today() - timedelta(days=3)
-            past = p.strftime("%Y-%m-%d")
+            tweet_time = t.strftime("%Y-%m-%d %H:%M")
+            #p = datetime.today() - timedelta(days=3)
+            #past = p.strftime("%Y-%m-%d")
 
             # check if tweet is too old
             # well, found out when reading docs that there is inbuild method for this.
@@ -33,29 +35,28 @@ def main():
                 #continue
                 # pass if tweeter is me (simple version)
             if not tweet.user.screen_name == "MyGasAndEnergy1":
-                print("\nTweet by: @" + tweet.user.screen_name)
-                print(tweet_time + " - " + past)
-                #print(past)
+                print("\nThanks to: @" + tweet.user.screen_name + ' at ' + tweet_time)
                 # check if we have retweeted and retweet if not
                 if not tweet.retweeted:
                     try:
                         tweet.retweet()
-                        print("Tweet retweeted!")
+                        print("Tweet retweeted")
                     except Exception as e:
-                        print(e)
+                        print('but old news, not prosessed')
+                        #print(e)
 
                 # check if we have favorited and favorite if not
                 if not tweet.favorited:
                     try:
                         tweet.favorite()
-                        print("Tweet favorited!")
+                        print("...and favorited!")
                     except Exception as e:
-                        print(e)
+                        pass
+                        #print(e)
 
-                    # bot sleep time (seconds)
-
-                sleep(240)
-                print("waiting for sun...")
+                # bot sleep time (seconds)
+                sleep(480)
+                print("waiting for sunny day...")
 
         except tweepy.TweepyException as e:
             print(e.reason)
