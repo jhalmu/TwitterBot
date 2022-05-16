@@ -28,11 +28,11 @@
 ### TODOS
 P = Partial, X= Done
 -[P] Check time so not retweeting old news <- actually it is allready limited to 7 days, but it can be expanded to check that it favs tweets only written in same day. No need now.  
--[X] Use env for secrets
--[X] Put to run inside docker (maeby after impelementing more parts)
--[P] Actual action: henry hub -information
--[P] More energy things
--[] Maeby more elegant solution for todos is using github's Issues.
--[] Actually I don't think Follow2Follow works in Docker. Maeby I have to use shell script.   
+- [X] Use env for secrets
+- [X] Put to run inside docker (maeby after impelementing more parts)
+- [P] Actual action: henry hub -information
+- [P] More energy things
+- [] Maeby more elegant solution for todos is using github's Issues.
+- [] Actually I don't think Follow2Follow works in Docker. Maeby I have to use shell script.   
 
 [https://twitter.com/MyGasAndEnergy1](https://twitter.com/MyGasAndEnergy1)
