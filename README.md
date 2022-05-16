@@ -23,16 +23,17 @@
 - Found solution for multiple search terms
 - Modified codes outputs
 - Thinking about tweeking things. I have ingreased bots acting times from 60 sec to 480 sec. Is it good or bad? Best week is maeby if I put just filter that it only process current days tweets?
-- Yes, can not say if Follower part works in docker. Should I separate scripts? I do not like to do that.  
+- Yes, can not say if Follower part works in docker. Should I separate scripts or use shell script? I do not like to separate.  
 
 ### TODOS
 P = Partial, X= Done
 -[P] Check time so not retweeting old news <- actually it is allready limited to 7 days, but it can be expanded to check that it favs tweets only written in same day. No need now.  
 - [X] Use env for secrets
 - [X] Put to run inside docker (maeby after impelementing more parts)
-- [P] Actual action: henry hub -information
+- [X] Actual action: henry hub -information
 - [P] More energy things
 - [] Maeby more elegant solution for todos is using github's Issues.
-- [] Actually I don't think Follow2Follow works in Docker. Maeby I have to use shell script.   
+- [] Fix Follow2Follow to work in Docker.
+- [] Information from outer data source to bot. Thats kind of crusial.   
 
 [https://twitter.com/MyGasAndEnergy1](https://twitter.com/MyGasAndEnergy1)
