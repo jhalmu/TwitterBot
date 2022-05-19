@@ -5,7 +5,7 @@ import tweepy
 from datetime import datetime, timedelta
 from config import create_api
 from time import sleep
-import pytz
+from zoneinfo import ZoneInfo
 # MyGasAndEnergy1
 api = create_api()
 
@@ -24,8 +24,9 @@ def main():
         try:
             # get time 3 days ago and modify it
             #tz_HEL = pytz.timezone('Europe/Helsinki')
-            t = pytz.timezone('Europe/Helsinki')
-            t = tweet.created_at
+            t = ZoneInfo('Europe/Helsinki')
+            # lets add 3 hours to get real time
+            t = tweet.created_at + timedelta(hours=3) 
             tweet_time = t.strftime("%Y-%m-%d %H:%M")
             #p = datetime.today() - timedelta(days=3)
             #past = p.strftime("%Y-%m-%d")
