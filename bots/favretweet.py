@@ -1,11 +1,11 @@
 # Orginal code:  https://dev.to/james_kinga/simple-twitter-bot-to-retweet-favorite-using-python-tweepy-50bg
 
 import tweepy
-import datetime
+#import datetime
 from datetime import datetime, timedelta
 from config import create_api
 from time import sleep
-
+import pytz
 # MyGasAndEnergy1
 api = create_api()
 
@@ -13,7 +13,7 @@ api = create_api()
 Favorite = True
 Follow = True
 
-search_term = "#henryhub OR #natgas OR #lng OR #patkaduunrisijoittaa -filter:retweets"
+search_term = "#henryhub OR #natgas OR #lng OR #patkaduunr1 -filter:retweets"
 
 # the function with the logic on the bot actions
 def main():
@@ -23,6 +23,8 @@ def main():
         ).items():
         try:
             # get time 3 days ago and modify it
+            #tz_HEL = pytz.timezone('Europe/Helsinki')
+            t = pytz.timezone('Europe/Helsinki')
             t = tweet.created_at
             tweet_time = t.strftime("%Y-%m-%d %H:%M")
             #p = datetime.today() - timedelta(days=3)
@@ -55,7 +57,7 @@ def main():
                         #print(e)
 
                 # bot sleep time (seconds)
-                sleep(480)
+                sleep(240)
                 print("waiting for sunny day...")
 
         except tweepy.TweepyException as e:
