@@ -13,7 +13,7 @@ api = create_api()
 Favorite = True
 Follow = True
 
-search_term = "#henryhub OR #natgas OR #lng -filter:retweets"
+search_term = "#henryhub OR #natgas OR #lng OR #patkaduunrisijoittaa -filter:retweets"
 
 # the function with the logic on the bot actions
 def main():
