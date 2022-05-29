@@ -28,12 +28,15 @@
 ### 19.5 2022
 - Now follow followers works also (via start.sh). Next thinking what is relevant or essential info and how to show that. Thinking that some information can be in profile? Maeby in pinned tweet?  
 
+### 28.5.2022
+- Hmm. Ok, scrpit -version for "dualbooting" just dont work, so have to fix that.
+
 ### TODOS
 P = Partial, X= Done
 -[P] Check time so not retweeting old news <- actually it is allready limited to 7 days, but it can be expanded to check that it favs tweets only written in same day. No need now.  
 - [X] Use env for secrets
 - [X] Put to run inside docker (maeby after impelementing more parts)
-- [X] Actual action: henry hub -information
+- [P] Actual action: henry hub -information
 - [P] More energy things
 - [] Maeby more elegant solution for todos is using github's Issues.
 - [x] Fix Follow2Follow to work in Docker.
