@@ -14,4 +14,4 @@ COPY requirements.txt /tmp
 RUN pip install -r /tmp/requirements.txt
 
 WORKDIR /bots
-CMD ./start.sh
+CMD [ "python", "favretweet.py" ]
