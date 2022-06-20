@@ -1,4 +1,5 @@
 FROM python:3.10-bullseye
+ENV PYTHONUNBUFFERED=1
 RUN apt-get update && apt-get -y upgrade
 RUN useradd --create-home appuser
 WORKDIR /home/appuser
