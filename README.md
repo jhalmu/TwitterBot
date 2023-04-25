@@ -43,3 +43,6 @@ P = Partial, X= Done
 - [] Information from outer data source to bot. Thats kind of crusial.   
 
 [https://twitter.com/MyGasAndEnergy1](https://twitter.com/MyGasAndEnergy1)
+
+## 25.4.2023
+- Twitter have been made so much changes for their accounts so this approah I think do not work anymore. So Archiving.
